@@ -1,5 +1,5 @@
 import { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
-import { storage } from '../lib/storage'; // Assuming storage exports a 'storage' object/instance
+import { storage } from './lib/storage'; // Assuming storage exports a 'storage' object/instance
 import { User } from '../../shared/schema'; // Assuming schema exports a 'User' type
 
 const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
