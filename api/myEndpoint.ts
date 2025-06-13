@@ -1,10 +1,11 @@
-import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { Handler, HandlerEvent, HandlerContext } from '@netlify/functions';
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method === 'GET') {
-    res.status(200).json({ message: 'Hello from API!' });
+const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+  if (event.httpMethod === 'GET') {
+    return { statusCode: 200, body: JSON.stringify({ message: 'Hello from API!' }) };
   } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return { statusCode: 405, body: `Method ${event.httpMethod} Not Allowed`, headers: { 'Allow': 'GET' } };
   }
-}
+};
+
+export default handler;
