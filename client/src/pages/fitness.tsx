@@ -71,6 +71,16 @@ const serviceData: ServiceData = {
         src: "HFTtC1Nrxbk",
         alt: "",
         type: "video"
+      },
+      {
+        src: "ePzOgqbHpNI",
+        alt: "",
+        type: "video"
+      },
+      {
+        src: "20-JFpyVMJQ",
+        alt: "운동 중인 강아지",
+        type: "video"
       }
     ],
     testimonials: [

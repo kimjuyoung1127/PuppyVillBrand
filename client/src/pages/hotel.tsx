@@ -67,27 +67,26 @@ const serviceData: ServiceData = {
     },
     gallery: [
       // 아래 src 경로는 /public/images/hotel/ 내부의 실제 파일명으로 교체해주세요.
-      { src: "/images/hotel/room-single-a.jpg", alt: "싱글룸 A형 내부", caption: "싱글룸 A형" },
-      { src: "/images/hotel/room-terrace.jpg", alt: "테라스룸 내부", caption: "테라스룸" },
-      { src: "/images/hotel/hotel-exterior.jpg", alt: "호텔 외관", caption: "호텔 외관" },
-      { src: "/images/hotel/lounge.jpg", alt: "호텔 라운지", caption: "라운지" },
-      { src: "/images/hotel/playground.jpg", alt: "실내 놀이 공간", caption: "실내 놀이 공간" },
-      { src: "/images/hotel/grooming-room.jpg", alt: "미용 시설", caption: "미용 시설" },
+      { src: "/images/hotel/1.jpg", alt: "호텔룸 내부", caption: "싱글룸 A형" },
+      { src: "/images/hotel/2.jpg", alt: "호텔 외관", caption: "호텔 외관" },
+      { src: "/images/hotel/3.jpg", alt: "호텔 외관", caption: "호텔 외관" },
+      { src: "/images/hotel/4.jpg", alt: "호텔 외관", caption: "호텔 외관" },
+      { src: "/images/hotel/5.jpg", alt: "호텔 외관", caption: "호텔 외관" },
     ],
     testimonials: [
       {
         id: "review1",
         rating: 5,
-        comment: "밤새 잘 자고 기분 좋게 인사해줘서 감동이었어요. 시설도 깨끗하고 선생님들도 친절하셔서 안심하고 맡길 수 있었습니다.",
-        author: "보리 보호자",
-        date: "2023년 10월 26일",
+        comment: "여행을 다녀오게되어 아이들을 믿고 맡길만한 호텔이 필요했습니다. 둘다 11살 드신 강쥐님들이라 어디 편하게 맡기는게 마음이 편하진 못해요ㅜㅜ 전에 맡겼던 적은 없었던 곳이다보니 의심이 많은 저는 열흘전쯤 답사를 겸해서 방문을 했었구요. 기대이상으로 정말 만족했습니다! 리뷰를 오늘 남기는 이유는 호텔링 이후에도 만족하게된다면 그때 리뷰를 남겨야겠다고 생각했었기 때문이에요. 호텔링동안 아이들은 너무나 정성스레 잘 돌봐주셨구요. 사장님과 쌤들 모두 아이들이 잘 지낼수 있도록 최선을 다해주신다는걸 떨어져있는데도 충분히 느낄수 있었습니다. 하나하나 말할 필요 없을만큼 모든면에서 좋았구요! 아이들 맡길곳이 필요하시다면 믿고 가보시길 적극 추천합니다~ 이 리뷰는 요청받은적도 없는 100% 자발적 내돈내산 솔직리뷰입니다! ",
+        author: "보리 보호자님님",
+        date: "",
       },
       {
         id: "review2",
         rating: 5,
         comment: "혼자 자는 게 처음인데 생각보다 잘 적응했어요! 넓은 공간에서 친구들이랑 신나게 뛰어놀고, 간식도 잘 먹었다고 해서 너무 기뻤습니다.",
-        author: "뭉치 아빠",
-        date: "2023년 11월 05일",
+        author: "뭉치 보호지님",
+        date: "",
       },
     ],
     ctaText: "지금 예약하고 퍼피빌 호텔의 특별한 밤을 경험하세요!",
@@ -162,13 +161,13 @@ export default function HotelDetail() {
         <div className="absolute inset-0 bg-black/30"></div> {/* 어두운 오버레이 */} 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.h1 
-            className="font-playfair text-4xl md:text-6xl font-bold text-orange mb-6 drop-shadow-lg"
+            className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
             initial={{ opacity:0, y: 20 }} animate={{ opacity:1, y: 0 }} transition={{ duration: 0.7, delay: 0.2}}
           >
             {service.title}
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-orange/90 mb-8 drop-shadow-md"
+            className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-md"
             initial={{ opacity:0, y: 20 }} animate={{ opacity:1, y: 0 }} transition={{ duration: 0.7, delay: 0.4}}
           >
             {service.subtitle}
