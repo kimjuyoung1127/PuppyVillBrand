@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, Dog } from "lucide-react"; // Dog 아이콘 추가
 
 const plans = [
   {
@@ -17,12 +17,7 @@ const plans = [
     name: "프리미엄 입장료",
     price: "12,000원",
     features: [
-      "기본 입장료 포함 음료 전체", // 이 문구는 유지하거나, 아래처럼 모든 음료를 나열할 수 있습니다.
-      // "아메리카노",
-      // "카페라떼",
-      // "콜라",
-      // "사이다",
-      // "아이스티",
+      "기본 입장료 포함 음료 전체",
       "딸기라떼",
       "초코라떼",
       "망고스무디",
@@ -33,11 +28,32 @@ const plans = [
   },
 ];
 
-const dogFee = {
-  name: "반려견 동반",
-  price: "3,000원",
-  features: ["1마리당 적용"],
-};
+// 반려견 동반 요금 정보 업데이트
+const dogFees = [
+  {
+    tierName: "소형견 (~9.9kg)",
+    price: "3,000원",
+    description: "1마리당 적용",
+  },
+  {
+    tierName: "중형견 (~14.9kg)",
+    price: "4,000원",
+    description: "1마리당 적용",
+  },
+  {
+    tierName: "대형견 (15kg 이상)",
+    price: "5,000원",
+    description: "1마리당 적용, 문의 후 방문 가능",
+  },
+  {
+    tierName: "추가 안내",
+    items: [
+        "가족견(동일 보호자): 마리당 -1,000원 할인",
+        "매너벨트 1회 무료 제공",
+        "대형견은 안전을 위해 반드시 사전 문의 후 방문해주세요."
+    ]
+  }
+];
 
 export function PricingNew() {
   return (
@@ -98,6 +114,7 @@ export function PricingNew() {
           ))}
         </div>
 
+        {/* 반려견 요금 섹션 업데이트 */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,29 +122,44 @@ export function PricingNew() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="max-w-md mx-auto mt-8 text-left md:max-w-4xl"
         >
-          <div className="relative flex flex-col overflow-hidden bg-white border-2 border-gray-200 rounded-2xl shadow-lg">
-            <div className="flex flex-col justify-between flex-1 p-6 lg:p-8">
-              <div className="flex-1">
-                <p className="text-xl font-semibold text-amber-700">
-                  {dogFee.name}
-                </p>
-                <div className="mt-6">
-                  <p className="text-5xl font-bold tracking-tight text-amber-800">
-                    {dogFee.price}
-                  </p>
-                </div>
-                <ul className="mt-8 space-y-3">
-                  {dogFee.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-1" />
-                      <span className="text-base font-medium text-gray-700">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-lg p-6 lg:p-8">
+            <h3 className="text-2xl font-bold text-amber-700 mb-6 text-center flex items-center justify-center">
+              <Dog className="w-7 h-7 mr-2 text-amber-600" /> 반려견 동반 요금
+            </h3>
+            {dogFees.map((fee, index) => (
+              <div key={index} className="mb-6 pb-6 border-b border-gray-200 last:border-b-0 last:mb-0 last:pb-0">
+                {fee.tierName && fee.price && (
+                  <>
+                    <p className="text-xl font-semibold text-amber-600">
+                      {fee.tierName}
+                    </p>
+                    <p className="text-4xl font-bold tracking-tight text-amber-800 mt-2">
+                      {fee.price}
+                    </p>
+                    {fee.description && (
+                      <p className="text-sm text-gray-500 mt-1">{fee.description}</p>
+                    )}
+                  </>
+                )}
+                {fee.items && (
+                    <>
+                        <p className="text-xl font-semibold text-amber-600 mb-2">
+                            {fee.tierName} 
+                        </p>
+                        <ul className="space-y-2">
+                        {fee.items.map((item, itemIndex) => (
+                            <li key={itemIndex} className="flex items-start">
+                            <Check className="w-5 h-5 mr-2 text-green-500 flex-shrink-0 mt-1" />
+                            <span className="text-base font-medium text-gray-700">
+                                {item}
+                            </span>
+                            </li>
+                        ))}
+                        </ul>
+                    </>
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>
