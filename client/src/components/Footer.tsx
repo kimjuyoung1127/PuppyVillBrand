@@ -6,7 +6,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-playfair text-2xl font-bold text-warm-orange mb-4">퍼피빌</h3>
+            <h3 className="font-playfair text-2xl font-bold text-warm-orange mb-4 flex items-center">
+              <img src="/images/footer/logo.png" alt="퍼피빌 로고" className="h-8 w-8 mr-2" /> {/* 로고 이미지 경로를 확인해주세요 */}
+
+              퍼피빌
+            </h3>
             <p className="text-gray-300 mb-4 leading-relaxed">
               반려견 전문 케어 센터 퍼피빌에서<br />
               우리 아이의 건강하고 행복한 하루를 함께 만들어가세요.

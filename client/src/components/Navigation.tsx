@@ -17,9 +17,10 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <Link href="/" className="flex items-center">
+            <img src="/images/footer/logo.png" alt="퍼피빌 로고" className="h-8 w-8 mr-2" /> {/* 로고 이미지 경로를 확인해주세요 */}
             <h1 className="text-2xl font-playfair font-bold text-warm-orange">퍼피빌</h1>
-          </div>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">

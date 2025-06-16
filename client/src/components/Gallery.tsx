@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronDown, ChevronUp } from "lucide-react"; // ChevronDown, ChevronUp 아이콘 추가
 
 
 const galleryImages = [
@@ -153,6 +153,9 @@ const galleryImages = [
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false); // 더보기/숨기기 상태 추가
+
+  const imagesToShow = isExpanded ? galleryImages : galleryImages.slice(0, 3);
 
   return (
     <section id="gallery" className="py-20 bg-cream">
@@ -173,7 +176,7 @@ export default function Gallery() {
         </motion.div>
 
         <div className="masonry">
-          {galleryImages.map((image, index) => (
+          {imagesToShow.map((image, index) => ( // galleryImages 대신 imagesToShow 사용
             <motion.div
               key={index}
               className="masonry-item"
@@ -185,7 +188,7 @@ export default function Gallery() {
               <motion.img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full object-cover rounded-2xl shadow-lg cursor-pointer`} // image.height 클래스 제거
+                className={`w-full object-cover rounded-2xl shadow-lg cursor-pointer`}
                 whileHover={{ scale: 1.02, shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
                 transition={{ duration: 0.3 }}
                 onClick={() => setSelectedImage(image.src)}
@@ -193,6 +196,29 @@ export default function Gallery() {
             </motion.div>
           ))}
         </div>
+
+        {galleryImages.length > 3 && ( // 이미지가 3개 초과일 때만 버튼 표시
+          <div className="text-center mt-12">
+            <motion.button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-warm-orange border border-transparent rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-orange"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp className="w-5 h-5 mr-2" />
+                  숨기기
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-5 h-5 mr-2" />
+                  더보기
+                </>
+              )}
+            </motion.button>
+          </div>
+        )}
 
         {/* Lightbox */}
         <AnimatePresence>
