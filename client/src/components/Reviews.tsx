@@ -52,6 +52,18 @@ const beforeAfterData = [
     description: "조심성 많던 강아지에서 대담한 강아지로 성장",
     beforeImage: "/images/reviews/3.jpg",
     afterImage: "/images/reviews/4.jpg"
+  },
+  {
+    title: "또이의 자신감 변화",
+    description: "퍼피 때부터 꾸준한 등원으로 멋진 강아지로 성장",
+    beforeImage: "/images/reviews/5.png",
+    afterImage: "/images/reviews/6.png"
+  },
+  {
+    title: "깨백이의 자신감 충전",
+    description: "퍼피 때부터 꾸준한 등원으로 멋진 강아지로 성장",
+    beforeImage: "/images/reviews/7.png",
+    afterImage: "/images/reviews/8.png"
   }
 ];
 

@@ -79,7 +79,22 @@ const serviceData: ServiceData = {
       },
       {
         src: "20-JFpyVMJQ",
-        alt: "운동 중인 강아지",
+        alt: "",
+        type: "video"
+      },
+      {
+        src: "IxGEjm9bjYk",
+        alt: "",
+        type: "video"
+      },
+      {
+        src: "EgF_FsD1nvU",
+        alt: "",
+        type: "video"
+      },
+      {
+        src: "Y9ufqFeQwCg",
+        alt: "",
         type: "video"
       }
     ],
