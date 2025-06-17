@@ -6,147 +6,98 @@ import { X, ChevronDown, ChevronUp } from "lucide-react";
 const galleryImages = [
   {
     src: "/images/gallery/1.jpg",
-    alt: "강아지들이 함께 노는 모습갤러리 이미지 1",
+    alt: "",
   },
   {
     src: "/images/gallery/2.jpg",
-    alt: "갤러리 이미지 2",
+    alt: "",
   },
   {
     src: "/images/gallery/3.jpg",
-    alt: "갤러리 이미지 3",
+    alt: "",
   },
   {
     src: "/images/gallery/4.jpg",
-    alt: "갤러리 이미지 4: 뛰어노는 강아지", // alt 속성에 의미있는 설명을 추가하는 것이 좋습니다.
+    alt: "", // alt 속성에 의미있는 설명을 추가하는 것이 좋습니다.
     // height: "h-68" // Masonry 레이아웃을 위해 개별 높이 지정은 제거하거나 CSS로 관리하는 것이 좋습니다.
   },
   {
     src: "/images/gallery/5.jpg",
-    alt: "갤러리 이미지 5: 창밖을 보는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/6.jpg",
-    alt: "갤러리 이미지 6: 장난감을 가지고 노는 강아지",
+    alt: "",
     // height: "h-72"
   },
   {
     src: "/images/gallery/7.jpg",
-    alt: "갤러리 이미지 7: 풀밭 위의 강아지",
+    alt: "",
     // height: "h-60"
   },
   {
     src: "/images/gallery/8.jpg",
-    alt: "갤러리 이미지 8: 쉬고 있는 강아지들",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/9.jpg",
-    alt: "갤러리 이미지 9: 훈련 중인 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/10.jpg",
-    alt: "갤러리 이미지 10: 귀여운 강아지 표정",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/11.jpg",
-    alt: "갤러리 이미지 11: 친구와 함께 있는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/12.jpg",
-    alt: "갤러리 이미지 12: 공놀이 하는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/13.jpg",
-    alt: "갤러리 이미지 13: 잠자는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/14.jpg",
-    alt: "갤러리 이미지 14: 간식을 기다리는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/15.jpg",
-    alt: "갤러리 이미지 15: 산책하는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/16.jpg",
-    alt: "갤러리 이미지 16: 물 마시는 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/17.jpg",
-    alt: "갤러리 이미지 17: 미용 후 강아지",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/18.jpg",
-    alt: "갤러리 이미지 18: 다양한 강아지들",
+    alt: "",
     // height: "h-64"
   },
   {
     src: "/images/gallery/19.jpg",
-    alt: "갤러리 이미지 19: 퍼피빌 시설 내부",
+    alt: "",
     // height: "h-64"
   },
-  {
-    src: "/images/gallery/20.jpg",
-    alt: "갤러리 이미지 20: 강아지 교육 모습",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/21.jpg",
-    alt: "갤러리 이미지 21",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/22.jpg",
-    alt: "갤러리 이미지 22",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/23.jpg",
-    alt: "갤러리 이미지 23",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/24.jpg",
-    alt: "갤러리 이미지 24",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/25.jpg",
-    alt: "갤러리 이미지 25",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/26.jpg",
-    alt: "갤러리 이미지 26",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/27.jpg",
-    alt: "갤러리 이미지 27",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/28.jpg",
-    alt: "갤러리 이미지 28",
-    // height: "h-64"
-  },
-  {
-    src: "/images/gallery/29.jpg",
-    alt: "갤러리 이미지 29",
-  }
-];
-
+  
+]
 /**
  * 갤러리 컴포넌트
  * - 이미지들을 Masonry 레이아웃으로 보여줍니다.
