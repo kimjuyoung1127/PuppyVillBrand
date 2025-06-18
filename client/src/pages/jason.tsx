@@ -174,6 +174,8 @@ export default function DogTrainerPortfolio() {
         </div>
       </nav>
 
+
+              
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">

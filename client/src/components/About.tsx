@@ -42,15 +42,16 @@ const staff = [
     
   },
   {
-    name: "",
+    name: "최예진",
     position: "미용 실장",
-    experience: "12년 경력",
-    description: "",
-    image: "",
+    experience: "10년 경력",
+    description: "퍼피빌 펫 스타일리스트",
+    image: "/images/about/yejin.jpg",
     credentials: [
-      "애견 미용사 자격증",
-      "애견 미용사 실무 경력 10년 이상",
-      "애견 미용사 전문 교육 수료"
+      "한국 애견협회 반려견 스타일리스트 1,2,3급 자격증",
+      "WGA LEVEL A 자격증",
+      "IJA PRESENTS 1LEVEL 자격증",
+      "KKC 애견미용심사위원 자격증"
     ]
   },
   {
@@ -203,10 +204,16 @@ export default function About() {
                     ))}
                   </div>
                 </div>
-                <Link href="/jason" className="mt-auto"> {/* mt-auto로 버튼을 하단에 고정 */} 
-                  <Button variant="outline" className="w-full border-warm-orange text-warm-orange hover:bg-warm-orange hover:text-white transition-colors">
-                    자세히 보기
-                  </Button>
+                <Link 
+                  href={member.name === '김주영 트레이너' ? '/jason' : '#'}
+                  className="mt-auto" 
+
+                > 
+                  <div>
+                    <Button variant="outline" className="w-full border-warm-orange text-warm-orange hover:bg-warm-orange hover:text-white transition-colors">
+                      자세히 보기
+                    </Button>
+                  </div>
                 </Link>
               </motion.div>
             ))}
