@@ -13,8 +13,8 @@ import GroomingDetail from "./pages/grooming";
 import HotelDetail from "./pages/hotel"; 
 import DaycareDetail from "./pages/daycare"; 
 import CustomTraining from "./pages/customtraining";
-import EventDetail from "./pages/EventRental";
 import EventRental from "./pages/EventRental";
+import DogTrainerPortfolio from "./pages/jason";
 
 function Router() {
   return (
@@ -29,6 +29,7 @@ function Router() {
       <Route path="/daycare" component={DaycareDetail} />
       <Route path="/customtraining" component={CustomTraining} />
       <Route path="/EventRental" component={EventRental} />
+      <Route path="/jason" component={DogTrainerPortfolio} />
 
       {/* Location info modal */}
       <Route component={NotFound} />

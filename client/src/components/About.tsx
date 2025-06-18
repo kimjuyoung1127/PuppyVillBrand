@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Heart, Zap, Shield, Star } from "lucide-react"; // Award 아이콘은 사용되지 않아 제거했습니다.
 import { useState, useEffect } from "react"; // useState와 useEffect를 추가합니다.
+import { Link } from "wouter"; // 이 부분도 추가해주세요
+import { Button } from "@/components/ui/button"; // 이 부분도 추가해주세요.
 
 
 const features = [
@@ -176,29 +178,36 @@ export default function About() {
             {staff.map((member, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center bg-white p-6 rounded-lg shadow-md flex flex-col justify-between" // 카드 스타일 및 flex 설정 추가
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg"
-                />
-                <h4 className="font-bold text-dark-gray mb-2">{member.name}</h4>
-                <p className="text-warm-orange font-semibold mb-2">{member.position}</p>
-                <p className="text-sm text-medium-gray mb-4">{member.description}</p>
-                
-                <div className="space-y-2">
-                  {member.credentials.map((credential, credIndex) => (
-                    <div key={credIndex} className="flex items-center text-sm text-medium-gray">
-                      <Star className="w-4 h-4 text-warm-orange mr-2" />
-                      <span>{credential}</span>
-                    </div>
-                  ))}
+                <div> {/* 내용 컨테이너 추가 */} 
+                  <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg"
+                  />
+                  <h4 className="font-bold text-dark-gray mb-2">{member.name}</h4>
+                  <p className="text-warm-orange font-semibold mb-2">{member.position}</p>
+                  <p className="text-sm text-medium-gray mb-4 min-h-[60px]">{member.description}</p> {/* 최소 높이 설정 */} 
+                  
+                  <div className="space-y-2 mb-4"> {/* 하단 여백 추가 */} 
+                    {member.credentials.map((credential, credIndex) => (
+                      <div key={credIndex} className="flex items-center text-sm text-medium-gray">
+                        <Star className="w-4 h-4 text-warm-orange mr-2 flex-shrink-0" /> {/* 아이콘 축소 방지 */} 
+                        <span>{credential}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+                <Link href="/jason" className="mt-auto"> {/* mt-auto로 버튼을 하단에 고정 */} 
+                  <Button variant="outline" className="w-full border-warm-orange text-warm-orange hover:bg-warm-orange hover:text-white transition-colors">
+                    자세히 보기
+                  </Button>
+                </Link>
               </motion.div>
             ))}
           </div>
