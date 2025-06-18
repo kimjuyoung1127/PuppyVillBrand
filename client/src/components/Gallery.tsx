@@ -115,7 +115,7 @@ export default function Gallery() {
   const imagesToShow = isExpanded ? galleryImages : galleryImages.slice(0, 3);
 
   return (
-    <section id="gallery" className="py-20 bg-cream relative pb-28"> {/* 하단 고정 버튼을 위한 여백 */}
+    <section id="gallery" className="py-20 bg-cream relative"> {/* pb-28 제거 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 갤러리 제목 및 설명 섹션 */}
         <motion.div
@@ -158,7 +158,7 @@ export default function Gallery() {
 
         {/* 더보기/숨기기 버튼 - 이미지가 3개 초과일 때만 표시 */}
         {galleryImages.length > 3 && (
-          <div className="fixed bottom-0 left-0 right-0 flex justify-center py-4 bg-cream bg-opacity-90 backdrop-blur-sm z-40">
+          <div className="mt-12 text-center"> {/* 변경: fixed 관련 클래스 제거, mt-12, text-center 추가 */}
             <motion.button
               onClick={() => setIsExpanded(!isExpanded)} // 클릭 시 isExpanded 상태 토글
               className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white transition-all duration-200 bg-warm-orange border border-transparent rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-warm-orange shadow-lg"

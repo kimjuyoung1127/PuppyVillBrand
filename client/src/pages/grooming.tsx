@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, Scissors, Star, X, Award, Heart, Shield } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+ 
 
 interface BeforeAfter {
   id: string;
@@ -96,12 +97,26 @@ const groomingFeatures = [
   }
 ];
 
+// Hero Section 데이터 인터페이스 (daycare.tsx 참고)
+interface HeroSectionData {
+  title: string;
+  subtitle: string;
+  backgroundImage: string;
+}
+
+// grooming.tsx에 맞는 Hero 데이터 정의
+const groomingHeroData: HeroSectionData = {
+  title: "퍼피빌 살롱",
+  subtitle: "15년 경력 전문 미용사의 섬세한 손길로 완성하는 스타일",
+  backgroundImage: "https://images.unsplash.com/photo-1598809445853-3811f0d0ceb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // 미용실 관련 이미지로 교체 권장
+};
+
 export default function GroomingDetail() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedBeforeAfter, setSelectedBeforeAfter] = useState<BeforeAfter | null>(null);
   const [pricingImageModalOpen, setPricingImageModalOpen] = useState<boolean>(false);
   // 실제 가격표 이미지 경로로 변경해주세요.
-  const pricingImageUrl = "/images/grooming/pricing-table.jpg"; // 예시 경로
+  const pricingImageUrl = "/images/grooming/price.jpg"; // 예시 경로
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -126,11 +141,13 @@ export default function GroomingDetail() {
   return (
     <div className="min-h-screen bg-cream">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <h1 className="text-2xl font-playfair font-bold text-warm-orange cursor-pointer">퍼피빌</h1>
+              <h1 className="text-2xl font-playfair font-bold text-warm-orange cursor-pointer hover:opacity-80 transition-opacity">
+                퍼피빌
+              </h1>
             </Link>
             <Link href="/">
               <Button variant="ghost" className="flex items-center text-dark-gray hover:text-warm-orange">
@@ -142,59 +159,43 @@ export default function GroomingDetail() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-warm-orange to-orange-400">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+      {/* Hero Section (daycare.tsx 스타일로 수정) */}
+      <motion.section
+        className="py-20 md:py-32 bg-cover bg-center relative text-center bg-cream-dark overflow-hidden"
+        style={{ backgroundImage: `url(/images/grooming/1.jpg)` }} // 배경 이미지 설정
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="absolute inset-0 bg-black/40"></div> {/* 어두운 오버레이 */} 
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.h1
+            className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            {groomingHeroData.title}
+          </motion.h1>
+          <motion.p
+            className="text-xl md:text-2xl text-white/90 mb-8 drop-shadow-md"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            {groomingHeroData.subtitle}
+          </motion.p>
+          <Link href="/consultation">
+            <motion.button
+              className="bg-white text-warm-orange px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all shadow-xl text-lg"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-4">
-                전문 미용 서비스
-              </h1>
-              <p className="text-xl text-white/90 mb-6">견종별 맞춤 케어와 스트레스 프리 미용</p>
-              <p className="text-white/80 mb-8 leading-relaxed">
-                15년 경력의 전문 미용사가 우리 아이의 특성을 고려한 맞춤형 미용 서비스를 제공합니다. 
-                스트레스 없는 편안한 환경에서 더욱 아름답고 건강하게 변신시켜드립니다.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/consultation">
-                  <motion.button
-                    className="bg-white text-warm-orange px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all shadow-xl"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    미용 예약하기
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="relative bg-black rounded-2xl overflow-hidden shadow-2xl aspect-video">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src="https://www.youtube.com/embed/xgG7BZPGZNU?rel=0"
-                  title="퍼피빌 미용 서비스 소개"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="absolute inset-0"
-                ></iframe>
-              </div>
-            </motion.div>
-          </div>
+              미용 예약 상담하기
+            </motion.button>
+          </Link>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features */}
       <section className="py-16 bg-white">
@@ -336,24 +337,23 @@ export default function GroomingDetail() {
           >
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-dark-gray mb-2">
-                상세 가격표는 이미지를 참고해주세요
+                상세 가격표는 이미지를 클릭하여 확인해주세요
               </h3>
               <p className="text-medium-gray">
                 견종과 체중에 따른 정확한 가격 정보를 확인하실 수 있습니다
               </p>
             </div>
             
-            {/* Pricing image holder */}
+            {/* Pricing image holder - 수정된 부분 */}
             <div 
               className="bg-white rounded-2xl p-4 sm:p-8 shadow-lg text-center cursor-pointer hover:shadow-xl transition-shadow duration-300"
-              onClick={openPricingImageModal}
+              onClick={openPricingImageModal} // 클릭 시 모달 열기
             >
-              <div className="w-full h-auto max-h-[600px] bg-gray-100 rounded-lg flex items-center justify-center mb-6 overflow-hidden">
-                {/* 실제 가격표 이미지로 교체 */}
+              <div className="w-full h-auto bg-gray-100 rounded-lg flex items-center justify-center mb-6 overflow-hidden">
                 <img 
                   src={pricingImageUrl} 
                   alt="퍼피빌 미용 가격표" 
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-auto object-contain rounded-lg max-h-[600px]" // max-h 추가 및 object-contain 유지
                   onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/800x1000?text=가격표+이미지+준비중')}
                 />
               </div>
@@ -483,6 +483,107 @@ export default function GroomingDetail() {
       </AnimatePresence>
 
       {/* Before/After Detail Modal */}
+      <AnimatePresence>
+        {selectedBeforeAfter && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedBeforeAfter(null)}
+          >
+            <motion.div
+              className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="text-center mb-6">
+                <h3 className="font-playfair text-2xl font-bold text-dark-gray mb-2">
+                  {selectedBeforeAfter.dogName}의 변신
+                </h3>
+                <p className="text-medium-gray">{selectedBeforeAfter.breed} · {selectedBeforeAfter.service}</p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="text-center">
+                  <img 
+                    src={selectedBeforeAfter.beforeImage} 
+                    alt="미용 전" 
+                    className="w-full h-64 object-cover rounded-lg mb-3" 
+                  />
+                  <span className="text-sm font-semibold text-medium-gray bg-gray-100 px-3 py-1 rounded-full">BEFORE</span>
+                </div>
+                <div className="text-center">
+                  <img 
+                    src={selectedBeforeAfter.afterImage} 
+                    alt="미용 후" 
+                    className="w-full h-64 object-cover rounded-lg mb-3" 
+                  />
+                  <span className="text-sm font-semibold text-warm-orange bg-warm-orange/10 px-3 py-1 rounded-full">AFTER</span>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-bold text-dark-gray mb-2">변화 포인트</h4>
+                  <p className="text-medium-gray leading-relaxed">{selectedBeforeAfter.description}</p>
+                </div>
+                
+                <div className="bg-cream rounded-lg p-4">
+                  <h4 className="font-bold text-dark-gray mb-2">보호자 후기</h4>
+                  <p className="text-medium-gray italic">"{selectedBeforeAfter.ownerComment}"</p>
+                </div>
+              </div>
+              
+              <button
+                className="absolute top-4 right-4 text-medium-gray hover:text-dark-gray transition-colors"
+                onClick={() => setSelectedBeforeAfter(null)}
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Pricing Image Modal - 추가된 부분 */}
+      <AnimatePresence>
+        {pricingImageModalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4" // z-index를 높여 다른 모달보다 위에 오도록 설정
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closePricingImageModal} // 배경 클릭 시 닫기
+          >
+            <motion.div
+              className="relative bg-white p-2 sm:p-4 rounded-lg shadow-2xl max-w-full max-h-[95vh] overflow-auto"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()} // 모달 내부 클릭 시 닫힘 방지
+            >
+              <img 
+                src={pricingImageUrl} 
+                alt="퍼피빌 미용 가격표 확대" 
+                className="w-auto h-auto max-w-full max-h-[85vh] object-contain rounded-md"
+                onError={(e) => (e.currentTarget.src = 'https://via.placeholder.com/1200x1600?text=가격표+이미지+준비중')}
+              />
+              <button 
+                onClick={closePricingImageModal} 
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 bg-white/70 rounded-full p-2 hover:bg-gray-200 transition-colors shadow-md"
+              >
+                <X size={20} sm={24} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Before & After Modal */}
       <AnimatePresence>
         {selectedBeforeAfter && (
           <motion.div
