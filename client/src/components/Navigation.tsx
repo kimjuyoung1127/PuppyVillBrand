@@ -19,7 +19,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
             <img src="/images/footer/logo.png" alt="퍼피빌 로고" className="h-8 w-8 mr-2" /> {/* 로고 이미지 경로를 확인해주세요 */}
-            <h1 className="text-2xl font-playfair font-bold text-warm-orange">퍼피빌</h1>
+            <h1 className="text-2xl font-gaegu font-bold text-warm-orange">퍼피빌</h1>
           </Link>
           
           {/* Desktop Navigation */}

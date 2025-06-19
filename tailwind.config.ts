@@ -5,6 +5,9 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: { // 추가된 부분
+        'gaegu': ['Gaegu', 'sans-serif'], 
+      }, // 추가된 부분
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

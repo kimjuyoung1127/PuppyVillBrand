@@ -102,10 +102,13 @@ export default function Services() {
               >
                 <div className="flip-card-inner">
                   {/* Front of card */}
-                  <div className={`flip-card-front ${service.color} p-8 flex flex-col items-center justify-center text-center shadow-xl text-white`}>
-                    <IconComponent className="w-16 h-16 mb-4" />
-                    <h3 className="font-playfair text-2xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-white/90">{service.description}</p>
+                  <div className={`flip-card-front ${service.color} p-6 sm:p-8 flex flex-col items-center justify-center text-center shadow-xl text-white`}>
+                    <IconComponent className="w-12 h-12 sm:w-16 sm:h-16 mb-3 sm:mb-4" />
+                    <h3 className="font-playfair text-xl sm:text-2xl font-bold mb-2 sm:mb-3">{service.title}</h3>
+                    <p className="text-white/90 text-sm sm:text-base mb-4">{service.description}</p>
+                    <button className="mt-auto bg-white text-warm-orange px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold hover:bg-gray-100 transition-all">
+                    👆
+                    </button>
                   </div>
                   
                   {/* Back of card */}
