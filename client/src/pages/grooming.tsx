@@ -19,113 +19,115 @@ interface BeforeAfter {
 const beforeAfterData: BeforeAfter[] = [
   {
     id: "1",
-    dogName: "몽이",
-    breed: "말티즈",
+    dogName: "가을이",
+    breed: "푸들",
     service: "전체 미용",
     beforeImage: "/images/grooming/ba/1_1.jpg",
     afterImage: "/images/grooming/ba/1_2.jpg",
-    description: "털이 엉켜있던 몽이가 깔끔하고 예쁜 모습으로 변신했습니다.",
-    ownerComment: "몽이가 이렇게 예뻐질 줄 몰랐어요! 정말 감사합니다."
+    description: "털이 엉켜있던 가을이가 깔끔하고 예쁜 모습으로 변신했습니다.",
+    ownerComment: "가을이가 이렇게 예뻐질 줄 몰랐어요! 정말 감사합니다."
   },
   {
     id: "2",
-    dogName: "복실이",
-    breed: "포메라니안",
-    service: "부분 미용 + 목욕",
+    dogName: "포동이",
+    breed: "말티즈",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/2_1.jpg",
     afterImage: "/images/grooming/ba/2_2.jpg",
-    description: "포메라니안 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
-    ownerComment: "복실이 털이 이렇게 부드러워질 줄 몰랐어요. 향도 너무 좋아요!"
+    description: "말티즈 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
+    ownerComment: "포동이 털이 이렇게 부드러워질 줄 몰랐어요. 향도 너무 좋아요!"
   },
   {
     id: "3",
-    dogName: "치치",
-    breed: "치와와",
-    service: "전체 미용 + 네일케어",
+    dogName: "뭉이",
+    breed: "믹스",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/3_1.jpg",
     afterImage: "/images/grooming/ba/3_2.jpg",
-    description: "소형견 전문 케어로 치치만의 매력을 한층 더 돋보이게 했습니다.",
-    ownerComment: "치치가 미용을 무서워했는데, 여기서는 편안하게 받더라고요."
+    description: "뭉이만의 매력을 한층 더 돋보이게 했습니다.",
+    ownerComment: "뭉이가 미용을 무서워했는데, 여기서는 편안하게 받더라고요."
   },
   {
     id: "4",
-    dogName: "뽀뽀",
-    breed: "요크셔테리어",
-    service: "얼굴컷 + 전신미용",
+    dogName: "둥이",
+    breed: "푸들",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/4_1.jpg",
     afterImage: "/images/grooming/ba/4_2.jpg",
-    description: "요크셔테리어의 우아한 모습을 살린 클래식한 스타일링입니다.",
-    ownerComment: "뽀뽀가 진짜 귀족견 같아요. 너무 멋있어요!"
+    description: "푸들의 곱슬털을 살린 클래식한 스타일링입니다.",
+    ownerComment: "둥이가 진짜 귀족견 같아요. 너무 멋있어요!"
   },
   {
     id: "5",
-    dogName: "코코",
+    dogName: "하리 ",
     breed: "비숑프리제",
-    service: "푸들컷 + 스파",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/5_1.jpg",
     afterImage: "/images/grooming/ba/5_2.jpg",
-    description: "비숑프리제의 곱슬털을 살린 귀여운 푸들컷으로 변신했습니다.",
-    ownerComment: "코코가 구름같이 귀여워졌어요. 스파까지 받아서 털이 정말 부드러워요."
+    description: "비숑프리제의 곱슬털을 살린 귀여운 컷으로 변신했습니다.",
+    ownerComment: "하리가 구름같이 귀여워졌어요. 스파까지 받아서 털이 정말 부드러워요."
   },
   {
     id: "6",
-    dogName: "바둑이",
-    breed: "시츄",
+    dogName: "베베",
+    breed: "베들링턴 테리어",
     service: "여름컷 + 목욕",
     beforeImage: "/images/grooming/ba/6_1.jpg",
     afterImage: "/images/grooming/ba/6_2.jpg",
     description: "더운 여름을 위한 시원한 여름컷으로 건강하고 깔끔하게 변신했습니다.",
-    ownerComment: "바둑이가 여름컷 받고 나서 훨씬 시원해보여요. 활동량도 늘었어요!"
+    ownerComment: "베베가 여름컷 받고 나서 훨씬 시원해보여요. 활동량도 늘었어요!"
   },
   {
     id: "7",
-    dogName: "나비",
-    breed: "포메라니안",
-    service: "전체 미용 + 네일케어",
+    dogName: "럭키",
+    breed: "비숑",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/7_1.jpg",
     afterImage: "/images/grooming/ba/7_2.jpg",
-    description: "포메라니안 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
-    ownerComment: "나비가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+    description: "비숑 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
+    ownerComment: "미용 후에 산책 나가면 다들 한 번씩 쳐다봐요! 너무 예뻐졌어요 😊"
+
+
   },
   {
     id: "8",
     dogName: "코코",
     breed: "폼스키",
-    service: "전체 미용 + 네일케어",
+    service: "전체 미용",
     beforeImage: "/images/grooming/ba/8_1.jpg",
     afterImage: "/images/grooming/ba/8_2.jpg",
-    description: "시츄의 활동성과 풍성한 털을 살린 스타일링입니다.",  
-    ownerComment: "미미가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+    description: "폼스키의 활동성과 풍성한 털을 살린 스타일링입니다.",  
+    ownerComment:"털 관리가 훨씬 쉬워졌어요! 집에서도 편하게 안아줄 수 있어요 🐶💕"
   },
   {
     id: "9",
-    dogName: "리사",
+    dogName: "테리",
     breed: "포메라니안",
     service: "전체 미용 + 네일케어",
     beforeImage: "/images/grooming/ba/9_1.jpg",
     afterImage: "/images/grooming/ba/9_2.jpg",
     description: "포메라니안의 풍성한 털을 살린 스타일링입니다.",  
-    ownerComment: "리사가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+    ownerComment: "아이도 스트레스를 안 받은 것 같아서 마음이 놓여요. 감사합니다!"
   },
   {
     id: "10",
-    dogName: "루시",
-    breed: "포메라니안",
-    service: "전체 미용 + 네일케어",
+    dogName: "자몽",
+    breed: "비숑 프리제",
+    service: "전체 미용 ",
     beforeImage: "/images/grooming/ba/10_1.jpg",
     afterImage: "/images/grooming/ba/10_2.jpg",
-    description: "포메라니안의 풍성한 털을 살린 스타일링입니다.",  
-    ownerComment: "루시가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+    description: "비숑프리제의 곱슬털을 살린 귀여운 컷으로 변신했습니다.",  
+    ownerComment: "우리 아이한테 찰떡같이 어울려요! 완전 만족입니다 😍"
   },
   {
     id: "11",
-    dogName: "코코",
-    breed: "비숑프리제",
-    service: "전체 미용 + 네일케어",
+    dogName: "구름이",
+    breed: "비숑 프리제",
+    service: "전체 미용 ",
     beforeImage: "/images/grooming/ba/11_1.jpg",
     afterImage: "/images/grooming/ba/11_2.jpg",
     description: "비숑프리제의 곱슬털을 살린 귀여운 푸들컷으로 변신했습니다.",
-    ownerComment: "코코가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+    ownerComment: "털도 예쁘고 향기도 좋아요~ 집 안이 포근한 느낌으로 가득해요 🌸"
   },
   
 ];
@@ -145,7 +147,7 @@ const groomingFeatures = [
   {
     icon: Shield,
     title: "프리미엄 제품",
-    description: "안전하고 고급스러운 미용 제품만을 사용"
+    description: "안전힌 미용 제품만을 사용"
   }
 ];
 
@@ -159,7 +161,7 @@ interface HeroSectionData {
 // grooming.tsx에 맞는 Hero 데이터 정의
 const groomingHeroData: HeroSectionData = {
   title: "퍼피빌 살롱",
-  subtitle: "15년 경력 전문 미용사의 섬세한 손길로 완성하는 스타일",
+  subtitle: "10년 경력 전문 미용사의 섬세한 손길로 완성하는 스타일",
   backgroundImage: "https://images.unsplash.com/photo-1598809445853-3811f0d0ceb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080", // 미용실 관련 이미지로 교체 권장
 };
 
@@ -414,17 +416,17 @@ export default function GroomingDetail() {
                 <div>
                   <h5 className="font-bold text-warm-orange mb-3">소형견 (5kg 미만)</h5>
                   <ul className="space-y-2 text-sm text-medium-gray">
-                    <li>• 전체미용: 80,000원~</li>
+                    <li>• 가위컷: 80,000원~</li>
                     <li>• 부분미용: 50,000원~</li>
-                    <li>• 목욕+기본케어: 35,000원~</li>
+                    <li>• 목욕: 35,000원~</li>
                   </ul>
                 </div>
                 <div>
                   <h5 className="font-bold text-warm-orange mb-3">중형견 (5-15kg)</h5>
                   <ul className="space-y-2 text-sm text-medium-gray">
-                    <li>• 전체미용: 120,000원~</li>
+                    <li>• 가위컷컷: 120,000원~</li>
                     <li>• 부분미용: 80,000원~</li>
-                    <li>• 목욕+기본케어: 60,000원~</li>
+                    <li>• 목욕: 60,000원~</li>
                   </ul>
                 </div>
                 <div>
@@ -479,7 +481,7 @@ export default function GroomingDetail() {
               { step: "1", title: "상담 & 체크", description: "건강 상태 확인 및 스타일 상담" },
               { step: "2", title: "목욕 & 케어", description: "전용 샴푸로 깨끗하게 목욕" },
               { step: "3", title: "미용 & 스타일링", description: "견종별 특성을 살린 미용" },
-              { step: "4", title: "마무리 & 케어", description: "네일케어 및 마무리 손질" }
+              { step: "4", title: "마무리 & 케어", description: "발톱케어 및 마무리 손질" }
             ].map((process, index) => (
               <motion.div
                 key={index}
