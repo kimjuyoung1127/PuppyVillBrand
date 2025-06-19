@@ -15,6 +15,9 @@ import DaycareDetail from "./pages/daycare";
 import CustomTraining from "./pages/customtraining";
 import EventRental from "./pages/EventRental";
 import DogTrainerPortfolio from "./pages/jason";
+import EventNotice from "./components/EventNotice";
+
+
 
 function Router() {
   return (
@@ -30,6 +33,7 @@ function Router() {
       <Route path="/customtraining" component={CustomTraining} />
       <Route path="/EventRental" component={EventRental} />
       <Route path="/jason" component={DogTrainerPortfolio} />
+      <Route path="/EventNotice" component={EventNotice} />
 
       {/* Location info modal */}
       <Route component={NotFound} />

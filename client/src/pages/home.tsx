@@ -7,6 +7,7 @@ import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import EventNotice from "@/components/EventNotice";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Services />
+      <EventNotice />
       <Gallery />
       <Reviews />
       <Pricing />
