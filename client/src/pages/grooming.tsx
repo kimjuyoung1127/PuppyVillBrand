@@ -22,8 +22,8 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "몽이",
     breed: "말티즈",
     service: "전체 미용",
-    beforeImage: "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/1_1.jpg",
+    afterImage: "/images/grooming/ba/1_2.jpg",
     description: "털이 엉켜있던 몽이가 깔끔하고 예쁜 모습으로 변신했습니다.",
     ownerComment: "몽이가 이렇게 예뻐질 줄 몰랐어요! 정말 감사합니다."
   },
@@ -32,8 +32,8 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "복실이",
     breed: "포메라니안",
     service: "부분 미용 + 목욕",
-    beforeImage: "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/2_1.jpg",
+    afterImage: "/images/grooming/ba/2_2.jpg",
     description: "포메라니안 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
     ownerComment: "복실이 털이 이렇게 부드러워질 줄 몰랐어요. 향도 너무 좋아요!"
   },
@@ -42,8 +42,8 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "치치",
     breed: "치와와",
     service: "전체 미용 + 네일케어",
-    beforeImage: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/3_1.jpg",
+    afterImage: "/images/grooming/ba/3_2.jpg",
     description: "소형견 전문 케어로 치치만의 매력을 한층 더 돋보이게 했습니다.",
     ownerComment: "치치가 미용을 무서워했는데, 여기서는 편안하게 받더라고요."
   },
@@ -52,8 +52,8 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "뽀뽀",
     breed: "요크셔테리어",
     service: "얼굴컷 + 전신미용",
-    beforeImage: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/4_1.jpg",
+    afterImage: "/images/grooming/ba/4_2.jpg",
     description: "요크셔테리어의 우아한 모습을 살린 클래식한 스타일링입니다.",
     ownerComment: "뽀뽀가 진짜 귀족견 같아요. 너무 멋있어요!"
   },
@@ -62,8 +62,8 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "코코",
     breed: "비숑프리제",
     service: "푸들컷 + 스파",
-    beforeImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/5_1.jpg",
+    afterImage: "/images/grooming/ba/5_2.jpg",
     description: "비숑프리제의 곱슬털을 살린 귀여운 푸들컷으로 변신했습니다.",
     ownerComment: "코코가 구름같이 귀여워졌어요. 스파까지 받아서 털이 정말 부드러워요."
   },
@@ -72,12 +72,64 @@ const beforeAfterData: BeforeAfter[] = [
     dogName: "바둑이",
     breed: "시츄",
     service: "여름컷 + 목욕",
-    beforeImage: "https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-    afterImage: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+    beforeImage: "/images/grooming/ba/6_1.jpg",
+    afterImage: "/images/grooming/ba/6_2.jpg",
     description: "더운 여름을 위한 시원한 여름컷으로 건강하고 깔끔하게 변신했습니다.",
     ownerComment: "바둑이가 여름컷 받고 나서 훨씬 시원해보여요. 활동량도 늘었어요!"
-  }
+  },
+  {
+    id: "7",
+    dogName: "나비",
+    breed: "포메라니안",
+    service: "전체 미용 + 네일케어",
+    beforeImage: "/images/grooming/ba/7_1.jpg",
+    afterImage: "/images/grooming/ba/7_2.jpg",
+    description: "포메라니안 특유의 풍성한 털을 살린 스타일링으로 더욱 사랑스럽게 변신했습니다.",
+    ownerComment: "나비가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+  },
+  {
+    id: "8",
+    dogName: "코코",
+    breed: "폼스키",
+    service: "전체 미용 + 네일케어",
+    beforeImage: "/images/grooming/ba/8_1.jpg",
+    afterImage: "/images/grooming/ba/8_2.jpg",
+    description: "시츄의 활동성과 풍성한 털을 살린 스타일링입니다.",  
+    ownerComment: "미미가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+  },
+  {
+    id: "9",
+    dogName: "리사",
+    breed: "포메라니안",
+    service: "전체 미용 + 네일케어",
+    beforeImage: "/images/grooming/ba/9_1.jpg",
+    afterImage: "/images/grooming/ba/9_2.jpg",
+    description: "포메라니안의 풍성한 털을 살린 스타일링입니다.",  
+    ownerComment: "리사가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+  },
+  {
+    id: "10",
+    dogName: "루시",
+    breed: "포메라니안",
+    service: "전체 미용 + 네일케어",
+    beforeImage: "/images/grooming/ba/10_1.jpg",
+    afterImage: "/images/grooming/ba/10_2.jpg",
+    description: "포메라니안의 풍성한 털을 살린 스타일링입니다.",  
+    ownerComment: "루시가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+  },
+  {
+    id: "11",
+    dogName: "코코",
+    breed: "비숑프리제",
+    service: "전체 미용 + 네일케어",
+    beforeImage: "/images/grooming/ba/11_1.jpg",
+    afterImage: "/images/grooming/ba/11_2.jpg",
+    description: "비숑프리제의 곱슬털을 살린 귀여운 푸들컷으로 변신했습니다.",
+    ownerComment: "코코가 이렇게 예뻐질 줄 몰랐어요. 털도 예쁘고 활동도 잘해요!"
+  },
+  
 ];
+
 
 const groomingFeatures = [
   {
@@ -576,7 +628,7 @@ export default function GroomingDetail() {
                 onClick={closePricingImageModal} 
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 text-gray-700 bg-white/70 rounded-full p-2 hover:bg-gray-200 transition-colors shadow-md"
               >
-                <X size={20} sm={24} />
+                <X size={20} />
               </button>
             </motion.div>
           </motion.div>
