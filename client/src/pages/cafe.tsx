@@ -113,7 +113,7 @@ const CafePage = () => {
   }, []);
 
   const heroData = {
-    title: "퍼피빌 카페",
+    title: "퍼피빌 애견카페",
     subtitle: "반려견과 함께하는 특별한 공간, 맛있는 음료와 즐거운 시간을 만끽하세요.",
   };
 
@@ -271,7 +271,7 @@ const CafePage = () => {
       {/* Footer 영역 */}
       <footer className="text-center py-8 text-gray-600 text-sm bg-white border-t border-gray-200">
         <p>&copy; {new Date().getFullYear()} PuppyVill. All rights reserved.</p>
-        <p>퍼피빌 | 대표: 하민주주 | 사업자등록번호: 123-45-67890</p>
+        <p>퍼피빌 | 대표: 하민주 | 사업자등록번호: 123-45-67890</p>
         <p>주소: 미사강변중앙로170번길 10 제12층 제1201호 (퍼피빌)</p>
       </footer>
 

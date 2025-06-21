@@ -35,6 +35,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-warm-orange transition-colors">독 피트니스</a></li>
               <li><a href="#" className="hover:text-warm-orange transition-colors">미용 & 목욕</a></li>
               <li><a href="#" className="hover:text-warm-orange transition-colors">호텔 & 데이케어</a></li>
+              <li><a href="#" className="hover:text-warm-orange transition-colors">애견 카페</a></li>
             </ul>
           </div>
           
@@ -43,11 +44,11 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2 text-warm-orange" />
-                0507-1343-7299
+                010-3749-7299
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2 text-warm-orange" />
-                hello@puppyville.co.kr
+                https://puppyvill.com
               </li>
               <li className="flex items-center">
                 <MapPin className="w-4 h-4 mr-2 text-warm-orange" />
