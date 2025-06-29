@@ -424,7 +424,7 @@ export default function GroomingDetail() {
                 <div>
                   <h5 className="font-bold text-warm-orange mb-3">중형견 (5-15kg)</h5>
                   <ul className="space-y-2 text-sm text-medium-gray">
-                    <li>• 가위컷컷: 120,000원~</li>
+                    <li>• 가위컷: 120,000원~</li>
                     <li>• 부분미용: 80,000원~</li>
                     <li>• 목욕: 60,000원~</li>
                   </ul>
