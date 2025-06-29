@@ -106,7 +106,7 @@ const classes = [
     videos: [
       { id: "Jci_jS2fVf0", title: "독피트니스 연습" },
       { id: "ck_Y_r3vpTU", title: "독피트니스 운동 예시" },
-      { id: "MErce5ihwAQ", title: "독피트니스 운동 예시"}
+      { id: "LnP-HUdhBK4", title: "독피트니스 운동 예시"}
     ],
     // 패키지 포함사항 분리
     packageIncludes: [
