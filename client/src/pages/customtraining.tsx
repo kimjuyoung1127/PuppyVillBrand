@@ -15,8 +15,11 @@ const instructors = [
 
 ];
 
-// 클래스 정보 데이터
-const classes = [
+// 클래스 데이터 타입을 정의하고 export 합니다.
+export type ClassData = typeof classes[0];
+
+// 클래스 정보 데이터 (export 추가)
+export const classes = [
   {
     id: "behavior",
     title: "행동수정 클래스",
@@ -110,7 +113,7 @@ const classes = [
     ],
     // 패키지 포함사항 분리
     packageIncludes: [
-      "1회 60분 피트니스 트레이닝",
+      "1회 50분 피트니스 트레이닝",
       "체력 평가 및 맞춤 운동 계획",
       "자세교정 및 수술 후 재활"
     ],
@@ -175,8 +178,8 @@ const VideoGallery = ({ videos }: { videos: { id: string; title: string; }[] }) 
   );
 };
 
-// 행동수정 클래스 컴포넌트
-const BehaviorClass = ({ classData, index }: { 
+// 행동수정 클래스 컴포넌트 (export 추가)
+export const BehaviorClass = ({ classData, index }: { 
   classData: { 
     bgColor: string;
     icon: JSX.Element;
@@ -292,8 +295,8 @@ const BehaviorClass = ({ classData, index }: {
   );
 };
 
-// 방문교육 프로그램 컴포넌트
-const HomeVisitClass = ({ classData, index }: { 
+// 방문교육 프로그램 컴포넌트 (export 추가)
+export const HomeVisitClass = ({ classData, index }: { 
   classData: {
     bgColor: string;
     icon: JSX.Element;
@@ -419,8 +422,8 @@ const HomeVisitClass = ({ classData, index }: {
   );
 };
 
-// 독피트니스 PT 컴포넌트
-const FitnessClass = ({ classData, index }: { 
+// 독피트니스 PT 컴포넌트 (export 추가)
+export const FitnessClass = ({ classData, index }: { 
   classData: {
     bgColor: string;
     icon: JSX.Element;

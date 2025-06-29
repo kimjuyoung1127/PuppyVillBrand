@@ -1,12 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, FC } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Instagram, Youtube, Mail, Phone, MapPin, Award, Users, Calendar, Heart, X, ChevronLeft, ChevronRight } from "lucide-react" // ChevronLeft, ChevronRight 추가
+import { Instagram, Youtube, Mail, Phone, MapPin, Award, Users, Calendar, Heart, ChevronLeft, ChevronRight } from "lucide-react"
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion" // framer-motion 추가
+import { motion } from "framer-motion"
+
+// customtraining.tsx에서 필요한 컴포넌트 및 데이터 import
+import { BehaviorClass, HomeVisitClass, FitnessClass, classes as customClasses, ClassData } from './customtraining';
 
 export default function DogTrainerPortfolio() {
   const [activeSection, setActiveSection] = useState("home")
@@ -132,6 +135,10 @@ export default function DogTrainerPortfolio() {
     { id: 6, src: "/images/jason/6.jpg", alt: "소개 이미지 6" },
     { id: 7, src: "/images/jason/7.jpg", alt: "소개 이미지 7" },
   ];
+
+  function setSelectedService(arg0: string) {
+    throw new Error("Function not implemented.")
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
@@ -334,17 +341,14 @@ export default function DogTrainerPortfolio() {
                   <Award className="w-6 h-6 text-yellow-500" />
                   <span className="text-gray-700">Fear Free Certified Trainer</span>
                 </div>
-
                 <div className="flex items-center space-x-3">
                   <Award className="w-6 h-6 text-yellow-500" />
                   <span className="text-gray-700">방문 트레이닝, 방문 교육 PT 4천회 이상</span>
-
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-6 h-6 text-yellow-500" />
                   <span className="text-gray-700">반려동물 행동 지도사</span>
                 </div>
-
               </div>
             </div>
           </div>
@@ -358,20 +362,42 @@ export default function DogTrainerPortfolio() {
             <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">서비스</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow group">
-                  <CardContent className="p-0">
+                <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow group flex flex-col">
+                  <CardContent className="p-0 flex-grow">
                     <div className="text-purple-600 mb-4 group-hover:scale-110 transition-transform">
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-3">{service.title}</h3>
                     <p className="text-gray-600">{service.description}</p>
                   </CardContent>
+                  <Button 
+                    className="mt-4 bg-purple-600 hover:bg-purple-700 text-white"
+                    onClick={() => {
+                      if (service.title === "맞춤형 피트니스") setSelectedService("fitness");
+                      else if (service.title === "방문 교육") setSelectedService("homevisit");
+                      else if (service.title === "전문 상담") setSelectedService("behavior"); // '전문 상담'을 '행동수정 클래스'에 연결합니다.
+                    }}
+                  >
+                    자세히 보기
+                  </Button>
                 </Card>
               ))}
             </div>
-          </div>
+          ) : (
+            
+            <div>
+              <Button onClick={() => setSelectedService(null)} className="mb-8 bg-gray-200 text-gray-800 hover:bg-gray-300">
+                <ChevronLeft className="w-4 h-4 mr-2" />
+                서비스 목록으로 돌아가기
+              </Button>
+              {selectedService === 'fitness' && <FitnessClass classData={customClasses.find(c => c.id === 'fitness')} index={0} />}
+              {selectedService === 'homevisit' && <HomeVisitClass classData={customClasses.find(c => c.id === 'homevisit')} index={0} />}
+              {selectedService === 'behavior' && <BehaviorClass classData={customClasses.find(c => c.id === 'behavior')} index={0} />}
+            </div>
+          )
         </div>
       </section>
+
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-gray-50">
@@ -489,10 +515,8 @@ export default function DogTrainerPortfolio() {
               <Instagram className="w-6 h-6" />
             </a>
             <a href="https://www.youtube.com/@Mungmungfit?si=g1AKqatSqNnUWik-" target="_blank" rel="noopener noreferrer" className="text-red-400 hover:text-red-300 transition-colors">
-
               <Youtube className="w-6 h-6" />
             </a>
-
           </div>
           <div className="mt-6 pt-6 border-t border-gray-700 text-sm text-gray-400">
             © 2024 MungMungFit. All rights reserved.
@@ -501,4 +525,66 @@ export default function DogTrainerPortfolio() {
       </footer>
     </div>
   )
+}
+
+const ServicesSection: FC<ServicesSectionProps> = () => {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const renderServiceDetails = () => {
+    if (!selectedService) return null;
+
+    const classData = customClasses.find(c => c.id === selectedService);
+    // classData가 undefined일 경우를 처리합니다.
+    if (!classData) return <div>서비스 정보를 찾을 수 없습니다.</div>;
+
+    // 'videos' 또는 'images' 속성이 없을 경우를 대비하여 기본값을 제공합니다.
+    const safeClassData = {
+      ...classData,
+      videos: classData.videos || [],
+      images: classData.images || [],
+    };
+
+    switch (selectedService) {
+      case 'fitness':
+        // FitnessClass가 요구하는 props 타입에 맞게 전달합니다.
+        return <FitnessClass classData={safeClassData} index={0} />;
+      case 'homevisit':
+        // HomeVisitClass가 요구하는 props 타입에 맞게 전달합니다.
+        return <HomeVisitClass classData={safeClassData} index={0} />;
+      case 'behavior':
+        // BehaviorClass가 요구하는 props 타입에 맞게 전달합니다.
+        return <BehaviorClass classData={safeClassData} index={0} />;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="max-w-6xl mx-auto">
+      <div className="space-y-6">
+        <p className="text-lg text-gray-600 leading-relaxed">
+          안녕하세요! 반려견 피트니스 전문 트레이너 <strong>김주영</strong>입니다.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          저는 6년간 5000마리 이상의 반려견과 함께 건강한 습관을 만들어 왔으며, <strong>운동을 통한 신체적 건강</strong>은 물론 <strong>정서적 웰빙까지 케어하는 트레이닝</strong>을 지향합니다. 🐶💪
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          반려견의 건강한 삶을 위해 다양한 프로그램과 솔루션을 제공하고 있으며, 고객의 건강한 반려견을 위해 최선을 다합니다.
+        </p>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          각 반려견의 <strong>성격, 생활환경, 신체 조건</strong>에 맞는 맞춤 솔루션션을 설계하며, 초보 보호자분들도 안심하고 함께할 수 있는 <strong>전문적이고 따뜻한 접근</strong>을 약속드립니다.
+        </p>
+        <div className="grid grid-cols-2 gap-4 pt-6">
+          <div className="text-center p-4 bg-purple-50 rounded-lg">
+            <div className="text-3xl font-bold text-purple-600">5000+</div>
+            <div className="text-sm text-gray-600">훈련한 반려견</div>
+          </div>
+          <div className="text-center p-4 bg-blue-50 rounded-lg">
+            <div className="text-3xl font-bold text-blue-600">10년</div>
+            <div className="text-sm text-gray-600">경력</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
 }
