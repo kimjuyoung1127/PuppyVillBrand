@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Navigation from "@/components/jason/Navigation";
-import HeroSection from "@/components/jason/HeroSection";
+import HeroSection from "@/components/jason/HeroSection2.tsx";
 import About from "@/components/jason/About";
 import Experience from "@/components/jason/Experience";
 import Services from "@/components/jason/Services";
