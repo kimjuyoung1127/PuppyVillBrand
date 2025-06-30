@@ -127,7 +127,10 @@ export const classes = [
 ];
 
 // 이미지 갤러리 컴포넌트
-const ImageGallery = ({ images }: { images: { url: string; alt: string; }[] }) => {
+const ImageGallery = ({ images }: { images?: { url: string; alt: string; }[] }) => {
+  if (!images) {
+    return null; // Or a placeholder
+  }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
       {images.map((image, index) => (
@@ -150,7 +153,10 @@ const ImageGallery = ({ images }: { images: { url: string; alt: string; }[] }) =
 };
 
 // 유튜브 비디오 갤러리 컴포넌트
-const VideoGallery = ({ videos }: { videos: { id: string; title: string; }[] }) => {
+const VideoGallery = ({ videos }: { videos?: { id: string; title: string; }[] }) => {
+  if (!videos) {
+    return null; // Or a placeholder for when there are no videos
+  }
   return (
     <div className="space-y-4 mb-6">
       {videos.map((video, index) => (
@@ -187,7 +193,7 @@ export const BehaviorClass = ({ classData, index }: {
     accentColor: string;
     shortDesc: string;
     details: string[];
-    images: { url: string; alt: string; }[];
+    images?: { url: string; alt: string; }[]; // Make images optional
     instructor: {
       name: string;
       certification: string;
@@ -304,7 +310,7 @@ export const HomeVisitClass = ({ classData, index }: {
     accentColor: string;
     shortDesc: string;
     details: string[];
-    images: { url: string; alt: string; }[];
+    images?: { url: string; alt: string; }[]; // Make images optional
     instructor: {
       name: string;
       certification: string;
@@ -431,7 +437,7 @@ export const FitnessClass = ({ classData, index }: {
     accentColor: string;
     shortDesc: string;
     details: string[];
-    videos: { id: string; title: string; }[];
+    videos?: { id: string; title: string; }[]; // Make videos optional
     instructor: {
       name: string;
       certification: string;
