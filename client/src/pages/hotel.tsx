@@ -109,14 +109,14 @@ const serviceData: ServiceData = {
     additionalPricingInfo: {
       familyDiscount: "-10,000원",
       hourlyExtension: "+5,000원",
-      checkInOutTime: "체크인 07:30 / 체크아웃 22:00",
+      checkInOutTime: "체크인 09:30 / 체크아웃 22:00",
     },
     gallery: [
-      { src: "/images/hotel/1.jpg", alt: "호텔룸 내부", caption: "싱글룸 A형" },
+      { src: "/images/hotel/1.jpg", alt: "호텔룸 내부", caption: "호텔룸" },
       { src: "/images/hotel/2.jpg", alt: "호텔 외관", caption: "호텔 외관" },
-      { src: "/images/hotel/3.jpg", alt: "호텔 복도", caption: "호텔 복도" },
-      { src: "/images/hotel/4.jpg", alt: "강아지 놀이 공간", caption: "실내 놀이 공간" },
-      { src: "/images/hotel/5.jpg", alt: "호텔 테라스", caption: "야외 테라스" },
+      { src: "/images/hotel/3.jpg", alt: "호텔 복도", caption: "호텔 외관" },
+      { src: "/images/hotel/4.jpg", alt: "", caption: "" },
+      { src: "/images/hotel/5.jpg", alt: "", caption: "" },
     ],
     testimonials: [
       {
