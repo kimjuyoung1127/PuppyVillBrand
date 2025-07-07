@@ -6,7 +6,7 @@ const pricingPlans = [
   {
     title: "유치원 주2회권",
     subtitle: "기본 사회화 프로그램",
-    price: "180,000",
+    price: "280,000",
     period: "원/월",
     features: [
       "주 2회 유치원 이용",

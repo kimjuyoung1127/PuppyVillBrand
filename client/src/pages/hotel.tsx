@@ -112,9 +112,9 @@ const serviceData: ServiceData = {
       checkInOutTime: "체크인 09:30 / 체크아웃 22:00",
     },
     gallery: [
-      { src: "/images/hotel/1.jpg", alt: "호텔룸 내부", caption: "호텔룸" },
-      { src: "/images/hotel/2.jpg", alt: "호텔 외관", caption: "호텔 외관" },
-      { src: "/images/hotel/3.jpg", alt: "호텔 복도", caption: "호텔 외관" },
+      { src: "/images/hotel/1.jpg", alt: "", caption: "" },
+      { src: "/images/hotel/2.jpg", alt: "", caption: "" },
+      { src: "/images/hotel/3.jpg", alt: "", caption: "" },
       { src: "/images/hotel/4.jpg", alt: "", caption: "" },
       { src: "/images/hotel/5.jpg", alt: "", caption: "" },
     ],
@@ -144,6 +144,7 @@ const serviceData: ServiceData = {
             "✅ 입·퇴실 시간: AM 09:30 ~ PM 21:30",
             "✔️ 시간 조율 가능하지만, 시간당 추가 요금이 발생합니다.",
             "✅ 호텔 이용 기준: 1박 기준은 24시간 단위이며, 초과 시 시간당 데이케어 요금이 추가됩니다.",
+            "7박 이상 5% 할인"
           ],
         },
         {
