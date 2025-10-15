@@ -448,7 +448,7 @@ export default function GroomingDetail() {
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
-            <Link href="/consultation">
+            {/* <Link href="/consultation">
               <motion.button
                 className="bg-warm-orange text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-warm-orange/90 transition-all shadow-xl"
                 whileHover={{ scale: 1.05 }}
@@ -456,7 +456,7 @@ export default function GroomingDetail() {
               >
                 정확한 견적 상담받기
               </motion.button>
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
       </section>

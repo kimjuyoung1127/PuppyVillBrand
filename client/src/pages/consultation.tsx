@@ -31,7 +31,7 @@ type ConsultationFormData = z.infer<typeof consultationSchema>;
 const services = [
   "켄넬 교육",
   "피트니스 프로그램",
-  "미용 & 목욕",
+  // "미용 & 목욕",
   "호텔 서비스",
   "데이케어",
   "카페 이용",
